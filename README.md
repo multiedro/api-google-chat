@@ -180,7 +180,7 @@ pip3 install --upgrade google-api-python-client google-auth
 
 5) Execute o Script
 ```
-chat_create_text_message_app.py
+py chat_create_text_message_app.py
 ```
 
 Assim que a mensagem for enviada sera retornado um json com os dados da mensagem enviada, armazene estes dados pois existem algumas informações importantes que podem ser utilizadas nos proximos scripts, como a thread para responder a uma mensagem.
@@ -227,7 +227,7 @@ pip3 install --upgrade google-api-python-client google-auth
 
 5) Execute o Script
 ```
-chat_create_text_message_thread.py
+py chat_create_text_message_thread.py
 ```
 
 O Comportamento esperado e que a mensagem seja entregue respondendo a thread que foi informada. caso isso não ocorra verifique se o grupo foi criado com o tipo de agrupamento de mensagens, caso tenha duvida verifique a documentação de criação de space.
