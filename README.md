@@ -41,60 +41,15 @@ que esta neste [link](https://developers.google.com/workspace/preview?hl=pt-br#a
 Em todos os scrips no seu cabeçalho será encontrado o link da documentação de origem/referencia, e as bibliotecas necessarias para rodar cada script, observe que neste
 repositorio temos um arquivo requirements.txt, que contém todas as bibliotecas instaladas no ambiente que esta sendo apresentado no treinamento
 
-1. Clone este diretório
-```
-git clone https://github.com/multiedro/larroude-data-hml-api-Shopify.git
-```
-2. crie um ambiente de desenvolvimento utilizando venv ou virtualenv
-
-3. execute o comando de instalação dos pacotes conforme demonstrado abaixo
-
-```
-pip install -r requirements.txt
-```
-
-4. Entendendo a estrutura de pastas deste projeto
-
-```
-## Pastas
-- backups - Contem backup do codigo inicial sem paginação dos resultados da API
-- Schemas - Traz os Schemas das respostas da API e também das tabela do BigQuery, para criação no BQ utilize a pasta a seguir.
-- scripts_create_bq - aqui você tem pronto os scripts com os campos para serem criados no bigquery isso sera demonstrado a seguir.
-- chaves - [Opcional] - crie esta pasta para armazenar suas chaves ou credenciais de acesso, lembre de alterar no código o path para esta pasta.
-
-## Scripts
-- InsertBQ.py - Script responsevel pelo insert dos dados dentro do Bigquery
-- main.py  - Script principal que vai realizar a consulta na API e tratar os dados a serem enviados para o BQ
-```
-
-A estrutura de pastas devera estar parecida com a da imagem abaixo.
-<img src="https://github.com/multiedro/larroude-data-hml-api-shopfy/blob/main/estruturadaspastas.PNG" width=715>
+<details><summary><h4>Inscrevendo em Eventos</h4></summary>
+</details>
 
 
 
-5. Antes de rodar o codigo e necessario que as tabelas já estejam criadas dentro do BigQuery, abaixo um exemplo de como pode usar os arquivos que estão dentro da pasta script_create_bq para criar a tabela, os arquivos desta pasta já estao com os nomes corretos dos campos e seus respctivos tipos. conforme demonstrado abaixo.
-
-
-<img src="https://github.com/multiedro/larroude-data-hml-api-shopfy/blob/main/tabelasBQ.gif" width=715>
-
-
-6. Após criar ou validar a existencia das tabelas, valide o script InsertBQ.py e ajuste o parametro TABLE_ID conforme demonstrado abaixo, este caminho você encontra na aba detalhes da sua tabela, neste caso vamos colocar somente parte do path pois o nome da tabela que ira complementar este path sera enviado pelo script principal juntamente com os dados que serão inseridos no banco de dados. o path e compospo pelo <ID DO PROJETO>.<DATASET>.<NOME DA TABELA> exemplo : larroude-data-hml.teste_Shopify.
-
-```
- #Id do projeto dataset e tabela no bigquery
-        table_id = "larroude-data-hml.teste_Shopify."+str(tabela)
-```
-
-7. Após este ajuste você podera executar o script principal da seguinte forma:
-```
-py main.py
-```
-
-<p>O processo de importação e tratamento dos dados pode durar entre 30 minutos a 1 hora dependendo do volume de dados.</p>
 
 
 </p>
-<p>O codigo ainda esta em desenvolvimento e este primeiro codigo foi desenvolvido e precisa passar por uma nova reconfiguração</p>
+<p>Esta documentação ainda esta em construção e podera sofrer atualizações nos scripts e também nesta documentação.</p>
 
 
 
