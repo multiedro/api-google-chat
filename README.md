@@ -34,11 +34,12 @@ que esta neste [link](https://developers.google.com/workspace/preview?hl=pt-br#a
 ---
 |Data           |Editor(es) Resp.                           |Versão dos códigos    |Obervações:
 |---------------|-------------------------------------------|----------------------|-----------------------------------------
-|12/12/2023     |Rodrigo Martins                            |1.1                   |Primeira versão funcional dos códigos
+|17/01/2024     |Rodrigo Martins                            |1.1                   |Primeira versão funcional dos códigos
 
-### **Executando o código para testes:**
+### **Documentação de origem:**
 
-Executando o projeto em ambiente local, atenção o Token de acesso a API da Shopify já esta neste repositorio, muito cuidado com o seu manuseio, as chaves para inserção dos dados no Bigquery devem ser baixadas no projeto do cliente esta não será salva neste repositorio.
+Em todos os scrips no seu cabeçalho será encontrado o link da documentação de origem/referencia, e as bibliotecas necessarias para rodar cada script, observe que neste
+repositorio temos um arquivo requirements.txt, que contém todas as bibliotecas instaladas no ambiente que esta sendo apresentado no treinamento
 
 1. Clone este diretório
 ```
