@@ -42,6 +42,38 @@ Em todos os scrips no seu cabeçalho será encontrado o link da documentação d
 repositorio temos um arquivo requirements.txt, que contém todas as bibliotecas instaladas no ambiente que esta sendo apresentado no treinamento
 
 <details><summary><h4>Inscrevendo em Eventos</h4></summary>
+<p>Se já tiver inscrito no programa do beta e ja recebeu o email liberando os seus projetos para uso antecipado da API pode seguir os proximos passos.
+
+O codigo para se inscrever em eventos de um grupo ou conversa especifica será o script `create_subscription.py` , observe que dentro do script você devera substituir alguns parametros conforme exemplo abaixo:</p>
+
+1) Este código ira utilizar a autenticação de usuario, sendo assim gere a sua chave e informe o path substituindo o valor (< CREDENCIAL DE USUARIO AQUI >) no local informado abaixo:
+
+```
+flow = InstalledAppFlow.from_client_secrets_file('< CREDENCIAL DE USUARIO AQUI >', SCOPES)
+```
+2) E necessario informar o id do grupo que você deseja realizar a inscrição para receber os eventos, substitua o valor ('<ID DO GRUPO AQUI>') no local informado abaixo:
+
+```
+TARGET_RESOURCE = '//chat.googleapis.com/spaces/<ID DO GRUPO AQUI>'
+```
+3) Além da autenticação do usuario e necessario uma chave que sera adicionada na url Discorey_service, alterando o valor ('< SUA CHAVE DE API AQUI >') no local informado abaixo:
+```
+DISCOVERY_SERVICE_URL = 'https://workspaceevents.googleapis.com/$discovery/rest?version=v1beta&labels=DEVELOPER_PREVIEW&key=< SUA CHAVE DE API AQUI >'
+```
+
+4) Instale as bibliotecas
+```
+ pip3 install --upgrade google-api-python-client google-auth-oauthlib
+```
+
+5) Execute o Script
+```
+py create_subscription.py
+```
+
+Neste momento será aberto uma janela no seu navegador para efetuar o login e conceder autorização para o seu aplicativo executar a inscrição, se tudo der certo ele ira retornar um json com os dados da inscrição.
+
+E importante guardar estes dados para monitorar o tempo da inscrição e se caso necessario precise excluir ela, você vai precisar do id desta inscrição.
 </details>
 
 
