@@ -134,12 +134,12 @@ topic_id = "< ID DO SEU TOPICO AQUI >"
 subscription_id = "< ID DO SEU SUBSCRIPTION ID AQUI >"
 ```
 
-4) Instale as bibliotecas
+3) Instale as bibliotecas
 ```
 pip install google-cloud-pubsub
 ```
 
-5) Execute o Script
+4) Execute o Script
 ```
 py subscriber.py
 ```
@@ -148,6 +148,46 @@ Este script ira receber os eventos enviados pelo pub/sub e serão impressos na t
 
 Documentação de referência esta neste [link](https://cloud.google.com/python/docs/reference/pubsub/latest) 
 </details>
+
+<details><summary><h4>Envio de Mensagens Texto Simples</h4></summary>
+O codigo para envio de mensagens de texto simples `chat_create_text_message_app.py` , antes de fazer o envio valide que o app foi adicionado no space, observe que dentro do script você devera substituir alguns parametros conforme exemplo abaixo:</p>
+
+1) Este código ira utilizar a autenticação de app, sendo assim gere a sua chave e informe o path substituindo o valor (< SUA SERVICE ACCOUNT AQUI>) no local informado abaixo:
+
+```
+CREDENTIALS = ServiceAccountCredentials.from_json_keyfile_name(
+    '< SUA SERVICE ACCOUNT AQUI>', SCOPES)
+```
+2) E necessario informar o id do grupo que você deseja enviar a mensagem ('<ID DO GRUPO AQUI>'):
+
+```
+parent='spaces/<ID DO GRUPO AQUI>',
+```
+
+3) Você pode alterar o texto no local demonstrado abaixo,  a documentação de referencia para formatação de textos esta neste [link](https://developers.google.com/chat/api/guides/v1/messages/create?hl=pt-br#python
+)
+
+```
+    body=    { 
+         "text": "<SUA MENSAGEM AQUI>"
+        }
+```
+
+4) Instale as bibliotecas
+```
+pip3 install --upgrade google-api-python-client google-auth
+```
+
+5) Execute o Script
+```
+chat_create_text_message_app.py
+```
+
+Assim que a mensagem for enviada sera retornado um json com os dados da mensagem enviada, armazene estes dados pois existem algumas informações importantes que podem ser utilizadas nos proximos scripts, como a thread para responder a uma mensagem.
+
+Documentação de referência esta neste [link](https://developers.google.com/chat/api/guides/v1/messages/create?hl=pt-br#python) 
+</details>
+
 
 </p>
 <p>Esta documentação ainda esta em construção e podera sofrer atualizações nos scripts e também nesta documentação.</p>
