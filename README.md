@@ -120,6 +120,36 @@ E importante guardar estes dados para monitorar o tempo da inscrição e se caso
 Documentação de referência esta neste [link](https://developers.google.com/chat/api/guides/v1/spaces/create?hl=pt-br) , para o detalhamento dos campos para criação do space esta neste [link](https://developers.google.com/chat/api/reference/rest/v1/spaces?hl=pt-br#Space.HistoryState)
 </details>
 
+<details><summary><h4>Inscrevento no Topico PubSub</h4></summary>
+O codigo para se inscrever como ouvinte no pubsub `subscriber.py` , observe que dentro do script você devera substituir alguns parametros conforme exemplo abaixo:</p>
+
+1) Este código ira utilizar a autenticação de app, sendo assim gere a sua chave e informe o path substituindo o valor (< SUA SERVICE ACCOUNT AQUI>) no local informado abaixo:
+
+```
+service_account_info = json.load(open("< SUA SERVICE ACCOUNT AQUI>"))
+```
+2) E necessario informar o id do projeto o topico e o subscribe id altere estes parametros que estão no inicio do script conforme demonstrado abaixo:
+
+```
+project_id = "< ID DO SEU PROJETO AQUI >"
+topic_id = "< ID DO SEU TOPICO AQUI >"
+subscription_id = "< ID DO SEU SUBSCRIPTION ID AQUI >"
+```
+
+4) Instale as bibliotecas
+```
+pip install google-cloud-pubsub
+```
+
+5) Execute o Script
+```
+py subscriber.py
+```
+
+Este script ira receber os eventos enviados pelo pub/sub e serão impressos na tela, você devera implementar a sua logica para fazer alguma coisa com os eventos recebidos
+
+Documentação de referência esta neste [link](https://cloud.google.com/python/docs/reference/pubsub/latest) 
+</details>
 
 </p>
 <p>Esta documentação ainda esta em construção e podera sofrer atualizações nos scripts e também nesta documentação.</p>
