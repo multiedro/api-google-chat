@@ -188,6 +188,53 @@ Assim que a mensagem for enviada sera retornado um json com os dados da mensagem
 Documentação de referência esta neste [link](https://developers.google.com/chat/api/guides/v1/messages/create?hl=pt-br#python) 
 </details>
 
+<details><summary><h4>Envio de Mensagens Texto Thread</h4></summary>
+O codigo para envio de mensagens de texto thread `chat_create_text_message_thread.py` , antes de fazer o envio valide que o app foi adicionado no space, observe que dentro do script você devera substituir alguns parametros conforme exemplo abaixo:</p>
+
+1) Este código ira utilizar a autenticação de app, sendo assim gere a sua chave e informe o path substituindo o valor (< SUA SERVICE ACCOUNT AQUI>) no local informado abaixo:
+
+```
+CREDENTIALS = ServiceAccountCredentials.from_json_keyfile_name(
+    '< SUA SERVICE ACCOUNT AQUI>', SCOPES)
+```
+2) E necessario informar o id do grupo que você deseja enviar a mensagem ('<ID DO GRUPO AQUI>'):
+
+```
+parent='spaces/<ID DO GRUPO AQUI>',
+```
+
+3) Para responder a uma mensagem precisamos passar alguns parametros que podem ser encontrados nesta documentação, abaixo os campos adicionais para que a mensagem seja respondida em uma thread especifica, a documentação para a descrição dos campos se encontra neste [link](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages/create?hl=pt-br#messagereplyoption), e também neste [link](https://developers.google.com/chat/api/guides/v1/messages/create?hl=pt-br#create-message-thread)
+
+```
+
+    messageReplyOption='REPLY_MESSAGE_FALLBACK_TO_NEW_THREAD',
+
+    body={
+
+        # Mensagem que sera enviada
+        'text': 'Boa Noite em que posso te ajudar.',
+
+            # Exemplo de como deve ficar a linha abaixo "name":"spaces/AAzAXKw2BS8/threads/qFnSk9aaxBE"
+            "name":"< NAME DA SUA THREAD AQUI >"
+        }
+    }
+```
+
+4) Instale as bibliotecas
+```
+pip3 install --upgrade google-api-python-client google-auth
+```
+
+5) Execute o Script
+```
+chat_create_text_message_thread.py
+```
+
+O Comportamento esperado e que a mensagem seja entregue respondendo a thread que foi informada. caso isso não ocorra verifique se o grupo foi criado com o tipo de agrupamento de mensagens, caso tenha duvida verifique a documentação de criação de space.
+
+Documentação de referência esta neste [link](https://developers.google.com/chat/api/guides/v1/messages/create?hl=pt-br#create-message-thread) 
+</details>
+
 
 </p>
 <p>Esta documentação ainda esta em construção e podera sofrer atualizações nos scripts e também nesta documentação.</p>
