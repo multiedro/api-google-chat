@@ -38,7 +38,7 @@ que esta neste [link](https://developers.google.com/workspace/preview?hl=pt-br#a
 
 ### **Documentação de origem:**
 
-Em todos os scrips no seu cabeçalho será encontrado o link da documentação de origem/referencia, e as bibliotecas necessarias para rodar cada script, observe que neste
+Em todos os scrips no seu cabeçalho será encontrado o link da documentação de origem/referência, e as bibliotecas necessarias para rodar cada script, observe que neste
 repositorio temos um arquivo requirements.txt, que contém todas as bibliotecas instaladas no ambiente que esta sendo apresentado no treinamento
 
 <details><summary><h4>Inscrevendo em Eventos</h4></summary>
@@ -74,6 +74,8 @@ py create_subscription.py
 Neste momento será aberto uma janela no seu navegador para efetuar o login e conceder autorização para o seu aplicativo executar a inscrição, se tudo der certo ele ira retornar um json com os dados da inscrição.
 
 E importante guardar estes dados para monitorar o tempo da inscrição e se caso necessario precise excluir ela, você vai precisar do id desta inscrição.
+
+Documentação de referência esta neste [link](https://developers.google.com/workspace/events/guides/create-subscription?hl=pt-br) 
 </details>
 
 
