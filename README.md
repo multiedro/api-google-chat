@@ -77,7 +77,6 @@ E importante guardar estes dados para monitorar o tempo da inscrição e se caso
 
 Documentação de referência esta neste [link](https://developers.google.com/workspace/events/guides/create-subscription?hl=pt-br) 
 </details>
-
 <details><summary><h4>Criação de Space/grupo</h4></summary>
 O codigo para criação de spaces/grupo  `space_create.py` , observe que dentro do script você devera substituir alguns parametros conforme exemplo abaixo:</p>
 
@@ -119,7 +118,6 @@ E importante guardar estes dados para monitorar o tempo da inscrição e se caso
 
 Documentação de referência esta neste [link](https://developers.google.com/chat/api/guides/v1/spaces/create?hl=pt-br) , para o detalhamento dos campos para criação do space esta neste [link](https://developers.google.com/chat/api/reference/rest/v1/spaces?hl=pt-br#Space.HistoryState)
 </details>
-
 <details><summary><h4>Inscrevento no Topico PubSub</h4></summary>
 O codigo para se inscrever como ouvinte no pubsub `subscriber.py` , observe que dentro do script você devera substituir alguns parametros conforme exemplo abaixo:</p>
 
