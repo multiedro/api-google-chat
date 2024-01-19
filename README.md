@@ -78,8 +78,47 @@ E importante guardar estes dados para monitorar o tempo da inscrição e se caso
 Documentação de referência esta neste [link](https://developers.google.com/workspace/events/guides/create-subscription?hl=pt-br) 
 </details>
 
+<details><summary><h4>Criação de Space/grupo</h4></summary>
+O codigo para criação de spaces/grupo  `space_create.py` , observe que dentro do script você devera substituir alguns parametros conforme exemplo abaixo:</p>
 
+1) Este código ira utilizar a autenticação de usuario, sendo assim gere a sua chave e informe o path substituindo o valor (< CREDENCIAL DE USUARIO AQUI >) no local informado abaixo:
 
+```
+flow = InstalledAppFlow.from_client_secrets_file('< CREDENCIAL DE USUARIO AQUI >', SCOPES)
+```
+2) Verifique a documentação deste link, para validar os parametros que devem ser preenchidos para a criação do seu space, abaixo um exemplo de como ficaria apos o preenchimento
+
+```
+{
+        "spaceThreadingState":"GROUPED_MESSAGES",
+        "externalUserAllowed": 'false',
+        "displayName": "Criação de Space via API - Magalu",
+        "singleUserBotDm": 'false',
+        "spaceType": "SPACE",
+        "name": "Space criado via API - 3",
+        "spaceDetails": {
+            "description": "Descrição do Space Criado via API - 3",
+            "guidelines": "guidelines Teste criação API"
+        }
+      }
+```
+
+3) Instale as bibliotecas
+```
+ pip3 install --upgrade google-api-python-client google-auth-oauthlib
+```
+
+4) Execute o Script
+```
+py space_create.py
+```
+
+Neste momento será aberto uma janela no seu navegador para efetuar o login e conceder autorização para o seu aplicativo executar a inscrição, se tudo der certo ele ira retornar um json com os dados da inscrição.
+
+E importante guardar estes dados para monitorar o tempo da inscrição e se caso necessario precise excluir ela, você vai precisar do id desta inscrição.
+
+Documentação de referência esta neste [link](https://developers.google.com/chat/api/guides/v1/spaces/create?hl=pt-br) , para o detalhamento dos campos para criação do space esta neste [link](https://developers.google.com/chat/api/reference/rest/v1/spaces?hl=pt-br#Space.HistoryState)
+</details>
 
 
 </p>
